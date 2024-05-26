@@ -59,10 +59,11 @@ const loadNewQuestion = () => {
     availableQuestions.splice(questionIndex, 1);
 };
 
-const updateProgressBar = () => {
+function updateProgressBar() {
     const progressPercentage = (currentQuestionIndex / totalQuestions) * 100;
+    const progressBar = document.getElementById("myprogressBar");
     progressBar.style.width = `${progressPercentage}%`;
-};
+}
 
 options.forEach((option) => {
     option.addEventListener("click", (e) => {
@@ -86,3 +87,4 @@ options.forEach((option) => {
 });
 
 loadNewQuestion();
+
